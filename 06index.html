@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>武侠人物生成器</title>
+    <style>
+        body {
+            font-family: 'Zhi Mang Xing', cursive, 'Microsoft JhengHei', sans-serif;
+            background-image: url('https://via.placeholder.com/1920x1080/f4e9d4/704214/?text=古风背景');
+            background-size: cover;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+        #character-intro {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: justify;
+            color: #704214;
+        }
+        .btn-generate {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 15px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #d32f2f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-generate:hover {
+            background-color: #a82325;
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>武侠人物生成器</h1>
+        <button class="btn-generate" onclick="generateCharacter()">点击生成人物</button>
+        <div id="character-intro"></div>
+    </div>
+
+    <script>
+        function generateWuxiaCharacterIntro() {
+            const birthOptions = ['唐朝', '宋朝', '明朝', '清朝', '华山', '少林寺', '武当山', '江南'];
+            const talentOptions = ['剑法高超', '内力深厚', '轻功卓越', '医术精湛', '智谋出众'];
+            const personalityOptions = ['豪爽', '机智', '冷静', '仁慈', '果断', '神秘'];
+            const charmOptions = ['英俊潇洒', '清丽脱俗', '风度翩翩', '气质非凡', '英姿飒爽', '温婉动人'];
+
+            const birth = birthOptions[Math.floor(Math.random() * birthOptions.length)];
+            const talent = talentOptions[Math.floor(Math.random() * talentOptions.length)];
+            const personality = personalityOptions[Math.floor(Math.random() * personalityOptions.length)];
+            const charm = charmOptions[Math.floor(Math.random() * charmOptions.length)];
+
+            const characterIntro = `侠客${Math.floor(Math.random() * 1000) + 1}，出生于${birth}，以${talent}著称，性格${personality}，拥有${charm}。`;
+
+            return characterIntro;
+        }
+
+        function generateCharacter() {
+            document.getElementById('character-intro').textContent = generateWuxiaCharacterIntro();
+        }
+    </script>
+
+</body>
+</html>

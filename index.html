@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>《网络编辑与制作》课程作业</title>
+    <title>Flex Container Example</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .item {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-    <hi>《网络编辑与制作》课程作业</hi>
-    <ul>
-        <li>第一次作业</li>
-    </ul>
+    <div class="flex-container">
+        <div class="item">项目1</div>
+        <div class="item">项目2</div>
+        <div class="item">项目3</div>
+    </div>
 </body>
 </html>
